@@ -1,0 +1,98 @@
+:root {
+    --primary-color: #330ae96b;
+    --secondary-color: #8da30c73;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--primary-color);
+    font: bold 2rem 'Open Sans', sans-serif;
+}
+
+.todo {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.todo__title {
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    margin-top: 20px;
+    box-shadow: 1px 1px 3px 3px;
+    font-size: 4rem;
+    color: #000000;
+}
+
+.todp__list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo__item {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 1px 1px 5px var(--secondary-color);
+}
+
+.todo__item > div {
+    width: 80%;
+}
+
+.todo__item:hover {
+    cursor: pointer;
+    transition: all .5s ease;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.todo__item > input[type='button'],
+.todo__item > input[type='checkbox'] {
+    width: 60px;
+    height: 30px;
+    font: inheirit;
+}
+
+.todo__item > input[type='checkbox']:checked + div{
+    text-decoration: line-through;
+}
+
+.todo__new-item{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin: 10px;
+    font: inherit;
+}
+
+.todo__new-item > input {
+    background-color: white;
+    border: none;
+    width: 80%;
+    outline: none;
+    font: inherit;
+}
+

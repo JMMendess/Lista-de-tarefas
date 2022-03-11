@@ -4,11 +4,16 @@ let banco = [
     {'tarefa': 'netflix', 'checked': true},
 ];
 
+const getBanco = () => JSON.parse(localStorage.getItem ('todoList')) ?? [];
+const setBanco = (banco) => localStorage.setItem ('todoList', JSON.stringify(banco));
+
 function atualizarBanco(key) {
+    const banco = getBanco();
     banco[key].checked = !banco[key].checked;
+    setBanco(banco);
 }
 
-function criarItem(tarefa, checked, indice, key) {
+function criarItem(tarefa, checked, indice) {
     const item = document.createElement('label');
 
     const status = checked ? 'checked' : '';
@@ -21,7 +26,7 @@ function criarItem(tarefa, checked, indice, key) {
 
     item.classList.add('todo__item');
     item.innerHTML = `
-        <input type="checkbox" ${status} data-indice=${indice} onchange="atualizarBanco(${key})">
+        <input type="checkbox" ${status} data-indice=${indice} onchange="atualizarBanco(${indice})">
         <div>${tarefa}</div>
         <input type="button" value="X" data-indice=${indice}>
     `;
@@ -35,20 +40,25 @@ const limparTarefas = () => {
 }
 const renderizarTela = () => {
     limparTarefas();
-    banco.forEach ((item, indice, key) => criarItem (item.tarefa, item.checked, indice,  key));
+    const banco = getBanco();
+    banco.forEach ((item, indice) => criarItem (item.tarefa, item.checked, indice));
 }
 
 const inserirItem = (evento) => {
     const tecla = evento.key;
     const texto = evento.target.value;
     if (tecla === 'Enter'){
+        const banco = getBanco();
         banco.push ({'tarefa': texto, 'checked': false});
+        setBanco(banco);
         renderizarTela();
         evento.target.value= '';
     }
 }
 const removerItem = (indice) => {
+    const banco = getBanco();
     banco.splice (indice, 1);
+    setBanco(banco);
     renderizarTela();
     
 }

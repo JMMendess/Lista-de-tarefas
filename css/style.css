@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #330ae96b;
-    --secondary-color: #8da30c73;
+    --primary-color: 	#363636;
+    --secondary-color: #00BFFF;
 }
 
 *{
@@ -33,12 +33,12 @@ body {
     height: 60px;
     justify-content: center;
     margin-top: 20px;
-    box-shadow: 1px 1px 3px 3px;
-    font-size: 4rem;
+    box-shadow: 1px 1px 3px 5px 5px;
+    font-size: 5rem;
     color: #000000;
 }
 
-.todp__list {
+.todo__list {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -52,11 +52,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    box-shadow: 1px 1px 5px var(--secondary-color);
+    box-shadow: 1px 3px 5px 6px var(--secondary-color);
 }
 
 .todo__item > div {
-    width: 80%;
+    width: 100%;
 }
 
 .todo__item:hover {

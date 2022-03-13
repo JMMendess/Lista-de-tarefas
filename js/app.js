@@ -1,8 +1,11 @@
 
 let banco = [];
+<<<<<<< HEAD
 
 const getBanco = () => JSON.parse(localStorage.getItem ('todoList')) ?? [];
 const setBanco = (banco) => localStorage.setItem ('todoList', JSON.stringify(banco));
+=======
+>>>>>>> refs/remotes/origin/main
 
 function atualizarBanco(key) {
     const banco = getBanco();

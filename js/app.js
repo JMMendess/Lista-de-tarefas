@@ -1,8 +1,5 @@
 
-let banco = [
-    {'tarefa': 'estudar JS', 'checked': false},
-    {'tarefa': 'netflix', 'checked': true},
-];
+let banco = [];
 
 function atualizarBanco(key) {
     banco[key].checked = !banco[key].checked;

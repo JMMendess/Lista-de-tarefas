@@ -1,8 +1,5 @@
 
-let banco = [
-    {'tarefa': 'estudar JS', 'checked': false},
-    {'tarefa': 'netflix', 'checked': true},
-];
+let banco = [];
 
 const getBanco = () => JSON.parse(localStorage.getItem ('todoList')) ?? [];
 const setBanco = (banco) => localStorage.setItem ('todoList', JSON.stringify(banco));
